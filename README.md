@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Frontend Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a frontend project that simulates a potential real-life designer hand-off that is given to a software engineer to implement. You have 72 hours to complete this challenge.
 
-## Available Scripts
+Your task is to implement the two Figma designs to spec and integrate it with a real, public GraphQL API.
 
-In the project directory, you can run:
+**You are free to use any web framework and technology, as long as the core frontend stack is based on React.**
 
-### `npm start`
+## Task Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You are building two very simple flows.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Login page
 
-### `npm test`
+This login page will simply check static credentials (e.g. admin/admin) which if work, should redirect the user to the main page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**DO NOT build a full auth system for this. We do not expect you to build a backend.**
 
-### `npm run build`
+### 2. Pokedex (List view of Pokemons)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After the login page, you will be dropped into a "Pokedex", a simple dashboard that renders a list of Pokemon. When a Pokemon is selected, the selected Pokemon shows up on the right side with more details.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Design Pokemon details
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You will notice that in the selected section, only the header is designed for you. You have free autonomy over how to design the details section, and you are encouraged to implement the details page yourself.
 
-### `npm run eject`
+### 4. Gitlab
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To submit your code, commit your changes to a private **Gitlab** repository.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In that repository, grant the following accounts **developer access** to be able to review the code and schedule a follow-up:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- @eddiewang
+- @jacob.landowski
+- @ddanielcruzz
+- @mon.quindoza
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## What we are looking for
 
-## Learn More
+- Ability to create forms
+- Ability to implement the various form states (field validation, error, success etc)
+- Ability to implement style to spec
+- Responsiveness
+- Ability to use Graphql correctly
+- Ability to integrate a real API
+- Ability to implement a pagination API
+- Clean-code and separation of component concerns
+- Ability to design new UIs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Recommendations
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+We recommend highlighting these skills if you have familiarity with it, however, this is optional and not necessary:
 
-### Code Splitting
+- Next.js or CRA
+- Typescript
+- CSS-in-JS (styled-components, emotion, etc.)
+- Tailwind CSS
+- XState
+- Deploy/Hosted (eg. Netlify, Vercel, AWS, GCP, Azure)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Figma Link
 
-### Analyzing the Bundle Size
+[https://www.figma.com/file/lv57Aog6JVWqWJH4STVKeL/frontend-challenge?node-id=0%3A1](https://www.figma.com/file/lv57Aog6JVWqWJH4STVKeL/frontend-challenge?node-id=0%3A1)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Graphql API
 
-### Making a Progressive Web App
+[https://graphql-pokemon2.vercel.app/](https://graphql-pokemon2.vercel.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Example query:
 
-### Advanced Configuration
+```
+{
+  pokemons(first: 10) {
+    id
+    number
+    name
+    image
+    classification
+    weight {
+      minimum
+      maximum
+    }
+    height {
+      minimum
+      maximum
+    }
+  }
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
