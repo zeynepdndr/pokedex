@@ -12,7 +12,16 @@
     "isolatedModules": true,
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "target": "es5"
   },
   "include": ["src"]
 }
