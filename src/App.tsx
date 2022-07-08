@@ -9,8 +9,8 @@ function App() {
   return (
     <Layout>
       <>
-        {true && <Login />}
-        {isLoggedIn && <Dashboard />}
+        {false && <Login />}
+        {true && <Dashboard />}
       </>
     </Layout>
   );

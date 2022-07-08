@@ -7,7 +7,6 @@ const Input: React.FC<any> = (props) => {
     <div
       className={`${styles.control} ${isValid === false ? styles.invalid : ""}`}
     >
-      <label htmlFor={id}>{label}</label>
       <input
         type={type}
         id={id}

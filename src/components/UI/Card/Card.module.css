@@ -1,10 +1,4 @@
 .card {
-  position: absolute;
-  width: 508px;
-  height: 459px;
-  left: 466px;
-  top: 221px;
-
   background: #2d2f36;
   border-radius: 8px;
 }

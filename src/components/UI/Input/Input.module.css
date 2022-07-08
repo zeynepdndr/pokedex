@@ -22,13 +22,21 @@
   font: inherit;
   padding: 0.35rem 0.35rem;
   border-radius: 6px;
-  border: 1px solid #ccc;
+
+  box-sizing: border-box;
+
+  width: 380px;
+  height: 60px;
+  left: 530px;
+  top: 328px;
+
+  background: #3f414b;
+  border: 1px solid #f2c94c;
 }
 
 .control input:focus {
   outline: none;
-  border-color: #4f005f;
-  background: #f6dbfc;
+  background: #4d4c4e;
 }
 
 .control.invalid input {

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import Input from "../UI/Input/Input";
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
@@ -36,8 +36,6 @@ const passwordReducer = (state, action) => {
 };
 
 const Login = () => {
-  // const [enteredEmail, setEnteredEmail] = useState("");
-
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
     value: "",
     isValid: null,

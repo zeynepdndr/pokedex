@@ -3,7 +3,9 @@
   position: absolute;
   height: 459px;
   left: 466px;
-  top: 221px;
+
+  /*should be changed */
+  top: 38px;
 
   background: #2d2f36;
   border-radius: 8px;
