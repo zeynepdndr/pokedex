@@ -8,9 +8,9 @@ const PokemonItem = ({ pokemon }) => {
         src={pokemon.image === undefined ? "" : `${pokemon.image}`}
         alt={pokemon.name}
       />
-      <div className={styles["book-pokemon__description"]}>
-        <h2>{pokemon.name}</h2>
-        <div className={styles["book-pokemon__page"]}>{pokemon.page}</div>
+      <div className={styles["pokemon-item__description"]}>
+        <span className={styles["pokemon-number"]}>{pokemon.number}</span>
+        <span className={styles["pokemon-name"]}>{pokemon.name}</span>
       </div>
     </Card>
   );

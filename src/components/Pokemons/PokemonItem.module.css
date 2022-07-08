@@ -1,12 +1,13 @@
 .pokemon-item {
   width: 380px;
   height: 75px;
-  left: 178px;
-  top: 142px;
-
   background: #3f414b;
   border-radius: 6px;
-  margin: 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 27px;
+  margin: 1rem 0;
+  gap: 26px;
 }
 
 img {
@@ -15,4 +16,23 @@ img {
   left: 205px;
   top: 157px;
   border-radius: 50%;
+}
+
+.pokemon-item__description {
+  display: flex;
+  gap: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.pokemon-number {
+  color: #f2c94c;
+  font-weight: 700;
+}
+
+.pokemon-name {
+  color: #ededed;
+  font-weight: 600;
 }
