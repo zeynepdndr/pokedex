@@ -2,11 +2,15 @@
   font: inherit;
   cursor: pointer;
   padding: 0.5rem 1rem;
-  border: 1px solid #77002e;
-  background-color: #77002e;
-  color: #fcb8d2;
+  border: 6px solid #f2c94c;
+  background-color: #f2c94c;
   border-radius: 12px;
   margin-right: 1rem;
+
+  width: 380px;
+  height: 60px;
+  left: 530px;
+  top: 521px;
 }
 
 .button:hover,
