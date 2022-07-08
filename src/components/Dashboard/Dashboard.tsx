@@ -7,8 +7,13 @@ const Dashboard = (props) => {
     <>
       <Pokemons />
       <Card className={styles["selected-pokemon"]}>
-        <header>Ivysaur</header>
-        <div className={styles.content}></div>
+        <header>
+          <div className={styles["selected-pokemon-heading"]}>
+            <span className={styles["pokemon-name"]}>Ivysaur</span>
+            <span className={styles["pokemon-number"]}>#001</span>
+          </div>
+        </header>
+        <div className={styles["my-awesome-style"]}></div>
       </Card>
     </>
   );

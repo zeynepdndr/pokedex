@@ -1,0 +1,10 @@
+.pagination {
+  width: 508px;
+  height: 75px;
+  background: #1f1f1f;
+  border-radius: 0px 0px 0px 8px;
+}
+
+.pagination li {
+  background-color: red;
+}

@@ -5,13 +5,42 @@
   left: 634px;
   top: 78px;
 
+  gap: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-size: 18px;
+  line-height: 25px;
+
   background: #3b3e46;
   border-radius: 0px 8px 8px 0px;
 }
 
-header {
+.selected-pokemon-heading {
+  padding: 42px;
+  display: flex;
+  gap: 407px;
 }
 
-.content {
+header {
+  width: 690px;
+  height: 128px;
+  border-bottom: 2px solid #2d2f36;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.pokemon-number {
+  letter-spacing: 0.1em;
+  color: #f2c94c;
+}
+
+.pokemon-name {
+  color: #ededed;
+}
+
+.my-awesome-style {
   background-color: red;
 }

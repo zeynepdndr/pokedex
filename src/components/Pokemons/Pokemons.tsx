@@ -4,6 +4,7 @@ import PokemonItem from "./PokemonItem";
 import Card from "../UI/Card/Card";
 
 import styles from "./Pokemons.module.css";
+import Pagination from "../UI/Pagination/Pagination";
 
 // const POKEMON = gql`
 //   {
@@ -190,11 +191,14 @@ const Pokemons = () => {
   // if (loading) return <p>Loading...</p>;
   // if (error) return <p>Error!</p>;
 
+  const i = Array.from(
+    Array(POKEMON.data.pokemons.length).keys(),
+    (_, i) => i + 1
+  );
+
   return (
     <Card className={styles["pokemon-list"]}>
-      {POKEMON.data.pokemons.map((item) => (
-        <PokemonItem key={item.id} pokemon={item} />
-      ))}
+      <Pagination pages={i} items={POKEMON.data.pokemons} />
     </Card>
   );
 };
