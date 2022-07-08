@@ -1,20 +1,14 @@
 import { Query, QueryResult } from "react-apollo";
 import gql from "graphql-tag";
+import PokemonItem from "./PokemonItem";
+import Card from "../UI/Card/Card";
+
+import styles from "./Pokemons.module.css";
 
 const Pokemons = () => (
   <Query
     query={gql`
-    //   {
-    //     allCourses {
-    //       id
-    //       title
-    //       author
-    //       description
-    //       topic
-    //       url
-    //     }
-    //   }
-    {
+      {
         pokemons(first: 10) {
           id
           number
@@ -41,11 +35,22 @@ const Pokemons = () => (
       if (error) return <p>Error!</p>;
 
       return data.viewer.map((item) => {
-        <div key={item.login}>
-          <p>{item.login}</p>
-        </div>;
+        <Card className={styles["pokemon-item "]}>
+          <PokemonItem pokemon={item} />
+        </Card>;
       });
     }}
   </Query>
 );
 export default Pokemons;
+
+//   {
+//     allCourses {
+//       id
+//       title
+//       author
+//       description
+//       topic
+//       url
+//     }
+//   }

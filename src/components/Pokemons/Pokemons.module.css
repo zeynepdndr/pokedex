@@ -1,0 +1,10 @@
+.pokemon-item {
+  position: absolute;
+  width: 380px;
+  height: 75px;
+  left: 178px;
+  top: 142px;
+
+  background: #3f414b;
+  border-radius: 6px;
+}

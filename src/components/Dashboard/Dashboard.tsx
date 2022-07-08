@@ -1,3 +1,4 @@
+import Pokemons from "../Pokemons/Pokemons";
 import Card from "../UI/Card/Card";
 import styles from "./Dashboard.module.css";
 
@@ -5,7 +6,7 @@ const Dashboard = (props) => {
   return (
     <div className={styles.dashboard}>
       <Card className={styles["pokemon-list"]}>
-        <Card className={styles["pokemon-item"]}></Card>
+        <Pokemons />
       </Card>
       <Card className={styles["selected-pokemon"]}>
         <header>Ivysaur</header>
