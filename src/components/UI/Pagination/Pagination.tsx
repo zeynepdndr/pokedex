@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import SweetPagination from "sweetpagination";
 import PokemonItem from "../../Pokemons/PokemonItem";
 import styles from "./Pagination.module.css";

@@ -1,9 +1,22 @@
+import { useContext } from "react";
+import PokemonContext from "../../store/pokemon-context";
 import Card from "../UI/Card/Card";
 import styles from "./PokemonItem.module.css";
 
 const PokemonItem = ({ pokemon }) => {
+  const pokemonCtx = useContext(PokemonContext);
+
+  const onSelectItem = () => {
+    pokemonCtx.selectItem(pokemon);
+    console.log("clicked", pokemonCtx.selectedItem);
+  };
+
   return (
-    <Card key={pokemon.id} className={styles["pokemon-item"]}>
+    <Card
+      key={pokemon.id}
+      className={styles["pokemon-item"]}
+      onClick={onSelectItem}
+    >
       <img
         src={pokemon.image === undefined ? "" : `${pokemon.image}`}
         alt={pokemon.name}

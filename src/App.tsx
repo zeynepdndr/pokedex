@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
-
+import PokemonContextProvider from "./store/PokemonProvider";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Layout from "./components/Layout/Layout";
 import Login from "./components/Login/Login";
@@ -15,12 +15,14 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <Layout>
-        <>
-          {false && <Login />}
-          {true && <Dashboard />}
-        </>
-      </Layout>
+      <PokemonContextProvider>
+        <Layout>
+          <>
+            {false && <Login />}
+            {true && <Dashboard />}
+          </>
+        </Layout>
+      </PokemonContextProvider>
     </ApolloProvider>
   );
 }
