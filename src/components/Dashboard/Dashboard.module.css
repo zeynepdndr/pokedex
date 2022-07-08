@@ -1,18 +1,3 @@
-.dashboard {
-  background-color: aquamarine;
-}
-
-.pokemon-list {
-  position: absolute;
-  width: 508px;
-  height: 737px;
-  left: 126px;
-  top: 78px;
-
-  background: #2d2f36;
-  border-radius: 8px 0px 0px 8px;
-}
-
 .selected-pokemon {
   position: absolute;
   width: 690px;

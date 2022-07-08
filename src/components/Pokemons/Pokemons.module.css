@@ -1,10 +1,11 @@
-.pokemon-item {
+.pokemon-list {
   position: absolute;
-  width: 380px;
-  height: 75px;
-  left: 178px;
-  top: 142px;
+  width: 508px;
+  height: 737px;
+  left: 126px;
+  top: 78px;
 
-  background: #3f414b;
-  border-radius: 6px;
+  background: #2d2f36;
+  border-radius: 8px 0px 0px 8px;
+  padding: 64px;
 }
