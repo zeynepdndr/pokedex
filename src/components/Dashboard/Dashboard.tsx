@@ -3,13 +3,11 @@ import Card from "../UI/Card/Card";
 import styles from "./Dashboard.module.css";
 import { useContext } from "react";
 import PokemonContext from "../../store/pokemon-context";
-import PokemonChart from "./PokemonChart";
+import Chart from "../Chart/Chart";
 
 const Dashboard = () => {
   const pokemonCtx = useContext(PokemonContext);
-  const { selectedItem: pokemon, items: pokemons } = pokemonCtx;
-
-  console.log("pokemonCtx", pokemonCtx.items);
+  const { selectedItem: pokemon } = pokemonCtx;
   return (
     <>
       <Pokemons />
@@ -24,7 +22,7 @@ const Dashboard = () => {
           <div id={styles["text"]}>
             <h4>{pokemon?.classification}</h4>
             <div className={styles["blackbox"]}>
-              {/* <PokemonChart selectedPokemon={pokemon} allPokemons={pokemons} /> */}
+              <Chart />
             </div>
           </div>
           <img src={pokemon?.image} alt={pokemon?.name} />

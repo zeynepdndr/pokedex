@@ -8,7 +8,6 @@ const PokemonItem = ({ pokemon }) => {
 
   const onSelectItem = () => {
     pokemonCtx.selectItem(pokemon);
-    console.log("clicked", pokemonCtx.selectedItem);
   };
 
   return (

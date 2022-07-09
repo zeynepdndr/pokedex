@@ -53,20 +53,14 @@ const Login = () => {
   };
 
   const emailChangeHandler = (event) => {
-    // setEnteredEmail(event.target.value);
     dispatchEmail({ type: "USER_INPUT", payload: event.target.value });
-    // setFormIsValid(event.target.value.includes("@") && passwordState.isValid);
   };
 
   const passwordChangeHandler = (event) => {
     dispatchPassword({ type: "USER_INPUT", payload: event.target.value });
-
-    //not optimal solution for updating state, state update scheduling can be different. useEffect is nice solution
-    // setFormIsValid(event.target.value.trim().length > 5 && emailState.isValid);
   };
 
   const validateEmailHandler = () => {
-    //No need to add a value here, it is about that input lost focus
     dispatchEmail({ type: "INPUT_BLUR" });
   };
 
@@ -86,7 +80,6 @@ const Login = () => {
   const { isValid: isEmailValid } = emailState;
   const { isValid: isPasswordValid } = passwordState;
 
-  //Refer to snapshot of the state. It will be run with latest state
   useEffect(() => {
     const identifier = setTimeout(() => {
       setFormIsValid(isEmailValid && isPasswordValid);
