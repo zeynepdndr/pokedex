@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import PokemonContext from "../../store/pokemon-context";
 import ChartBar from "./ChartBar";
 import "./Chart.css";
@@ -8,23 +8,40 @@ const Chart = () => {
   // const maxValue = Math.max(...dataPointValues);
   const pokemonCtx = useContext(PokemonContext);
 
-  const [dataPoints, setDataPoints] = useState([]);
+  console.log("pokemonCtx:", pokemonCtx);
 
-  if (
-    pokemonCtx &&
-    pokemonCtx !== undefined &&
-    pokemonCtx.items &&
-    pokemonCtx.items !== undefined
-  ) {
-    const values = pokemonCtx?.items.map((item) =>
-      parseInt(item["weight"]["minimum"])
-    );
-    // setDataPoints(pokemonCtx.items);
-  }
+  const [dataPoints, setDataPoints] = useState<number[] | null>([]);
+
+  const saveDataPointsHandler = () => {
+    if (
+      pokemonCtx &&
+      pokemonCtx !== undefined &&
+      pokemonCtx.items &&
+      pokemonCtx.items !== undefined
+    ) {
+      const values = pokemonCtx?.items.map((item) =>
+        parseInt(item["weight"]["minimum"])
+      );
+      setDataPoints(pokemonCtx.items);
+      console.log("did");
+    }
+  };
+
+  useEffect(() => {
+    saveDataPointsHandler();
+    console.log("dataPo:", dataPoints);
+  }, [pokemonCtx.selectedItem]);
 
   return (
     <div className="chart">
-      <ChartBar key={1} maxValue={100} value={10} label={""} />
+      {dataPoints?.map((item) => (
+        <ChartBar
+          key={item["id"]}
+          maxValue={20}
+          value={parseInt(item["weight"]["minimum"])}
+          label={item["name"]}
+        />
+      ))}
     </div>
   );
 };

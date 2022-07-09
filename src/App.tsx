@@ -17,8 +17,8 @@ function App() {
     <ApolloProvider client={client}>
       <PokemonContextProvider>
         <Layout>
-          {!pokemonCtx.isLoggedIn && <Login />}
-          {pokemonCtx.isLoggedIn && <Dashboard />}
+          {false && <Login />}
+          {true && <Dashboard />}
         </Layout>
       </PokemonContextProvider>
     </ApolloProvider>

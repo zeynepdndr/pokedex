@@ -15,7 +15,7 @@
   border-radius: 0px 8px 8px 0px;
 }
 
-.selected-pokemon-heading {
+.pokemon-heading {
   padding: 42px;
   display: flex;
   gap: 407px;
@@ -25,6 +25,7 @@ header {
   width: 690px;
   height: 128px;
   border-bottom: 2px solid #2d2f36;
+  background: #3b3e46;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
@@ -42,7 +43,10 @@ header {
 }
 
 #my-awesome-style {
-  padding: 4rem 1rem;
+  /* padding: 2.5rem 1rem; */
+  height: 609px;
+  background: white;
+  border-radius: 7px;
 }
 
 #my-awesome-style h4 {
@@ -52,20 +56,26 @@ header {
 }
 
 .blackbox {
-  background-color: purple;
+  background-color: #3f414b;
   padding: 1rem;
   border-radius: 10px;
-  color: var(--white);
+  color: white;
   font-size: 1rem;
   line-height: 1.5rem;
+
+  margin-top: 18rem;
+  margin-left: 6rem;
+  position: relative;
+
+  border-left: 1px solid blueviolet;
+  border-top: 1px solid blueviolet;
 }
 
 #my-awesome-style img {
   margin: 2rem 0 4rem 0;
-  width: 300px;
   height: auto; /*to preserve the aspect ratio of the image*/
-  border-left: 1px solid var(--green);
-  border-top: 1px solid var(--green);
+  /* border-left: 1px solid red;
+  border-top: 1px solid red; */
   border-radius: 25px;
   padding: 1rem;
 }

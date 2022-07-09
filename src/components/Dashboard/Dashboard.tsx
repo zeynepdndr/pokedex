@@ -13,20 +13,43 @@ const Dashboard = () => {
       <Pokemons />
       <Card className={styles["selected-pokemon"]}>
         <header>
-          <div className={styles["selected-pokemon-heading"]}>
-            <span className={styles["pokemon-name"]}>{pokemon?.name}</span>
-            <span className={styles["pokemon-number"]}>{pokemon?.number}</span>
-          </div>
-        </header>
-        <section id={styles["my-awesome-style"]}>
-          <div id={styles["text"]}>
-            <h4>{pokemon?.classification}</h4>
-            <div className={styles["blackbox"]}>
-              <Chart />
+          {pokemon && (
+            <div className={styles["pokemon-heading"]}>
+              <span className={styles["pokemon-name"]}>{pokemon?.name}</span>
+              <span className={styles["pokemon-number"]}>
+                {pokemon?.number}
+              </span>
             </div>
-          </div>
-          <img src={pokemon?.image} alt={pokemon?.name} />
-        </section>
+          )}
+          {!pokemon && (
+            <div className={styles["pokemon-heading"]}>
+              <span className={styles["pokemon-number"]}>Pokedex</span>
+            </div>
+          )}
+        </header>
+
+        {pokemon && (
+          <section id={styles["my-awesome-style"]}>
+            <div id={styles["text"]}>
+              <h4>{pokemon?.classification}</h4>
+              <div>
+                is the second-heaviest Pokemon (regarding minimum weight)
+              </div>
+              <div className={styles["blackbox"]}>
+                <Chart />
+              </div>
+            </div>
+            <img src={pokemon?.image} alt={pokemon?.name} />
+          </section>
+        )}
+        {!pokemon && (
+          <>
+            <div id={styles["text"]}>
+              Use the Advanced Search to explore Pokémon by type, weakness,
+              Ability, and more!
+            </div>
+          </>
+        )}
       </Card>
     </>
   );
