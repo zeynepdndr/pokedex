@@ -24,8 +24,9 @@ const PokemonContext = React.createContext({
     weight: {},
     height: {},
   },
+  items: [],
   selectItem: (id) => {},
-  removeItem: (id) => {},
+  addItems: (items) => {},
 });
 
 export default PokemonContext;

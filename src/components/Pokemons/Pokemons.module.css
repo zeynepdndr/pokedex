@@ -12,3 +12,8 @@
 .pokemon-list div > div:first-child {
   margin-top: 64px;
 }
+.pokemon-list div > nav {
+  position: absolute;
+  bottom: 0;
+  align-self: flex-end;
+}

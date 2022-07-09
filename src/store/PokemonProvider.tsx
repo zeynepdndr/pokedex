@@ -3,41 +3,38 @@ import PokemonContext from "./pokemon-context";
 
 const defaultPokemonState = {
   selectedItem: null,
+  items: [],
 };
 
 const pokemonReducer = (state, action) => {
   switch (action.type) {
-    case "GET_ALL":
+    case "ADD_ITEMS":
       return { items: action.payload };
-
     case "SELECT_ITEM":
       return { selectedItem: action.payload };
 
-    case "REMOVE_ITEM":
-      return {
-        items: state.items.filter((item) => item.id !== action.payload),
-      };
     default:
       return state;
   }
 };
 
 const PokemonProvider = (props) => {
-  const [pokemonState, dispatchBookAction] = useReducer(
+  const [pokemonState, dispathPokemonAction] = useReducer(
     pokemonReducer,
     defaultPokemonState
   );
   const selectItemHandler = (item) => {
-    dispatchBookAction({ type: "SELECT_ITEM", payload: item });
+    dispathPokemonAction({ type: "SELECT_ITEM", payload: item });
   };
-  const removeItemFromBookHandler = (id) => {
-    dispatchBookAction({ type: "REMOVE_ITEM", payload: id });
+  const addItemsHandler = (items) => {
+    dispathPokemonAction({ type: "ADD_ITEMS", payload: items });
   };
 
   const pokemonContext = {
     selectedItem: pokemonState.selectedItem,
     selectItem: selectItemHandler,
-    removeItem: removeItemFromBookHandler,
+    items: pokemonState.items,
+    addItems: addItemsHandler,
   };
 
   return (

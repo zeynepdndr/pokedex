@@ -1,32 +1,17 @@
-import { Query, QueryResult, useQuery } from "react-apollo";
-import gql from "graphql-tag";
+import { Query, QueryResult } from "react-apollo";
 import PokemonItem from "./PokemonItem";
 import Card from "../UI/Card/Card";
+import React from "react";
+import { useQuery } from "@apollo/react-hooks";
 
 import styles from "./Pokemons.module.css";
 import Pagination from "../UI/Pagination/Pagination";
 
-// const POKEMON = gql`
-//   {
-//     pokemons(first: 10) {
-//       id
-//       number
-//       name
-//       image
-//       classification
-//       weight {
-//         minimum
-//         maximum
-//       }
-//       height {
-//         minimum
-//         maximum
-//       }
-//     }
-//   }
-// `;
+import { useContext, useEffect, useState } from "react";
+import { GET_POKEMONS } from "../../service/pokemon.service";
+import PokemonContext from "../../store/pokemon-context";
 
-const POKEMON = {
+const POKEMONS = {
   data: {
     pokemons: [
       {
@@ -184,21 +169,34 @@ const POKEMON = {
 };
 
 const Pokemons = () => {
-  // const { loading, error, data } = useQuery(POKEMON);
+  const [pokemons, setPokemons] = useState<any>([]);
+  const { loading, error, data } = useQuery(GET_POKEMONS);
+  const pokemonCtx = useContext(PokemonContext);
 
-  // console.log(loading, error, data); // Stop at "true undefined undefined" 🥲
+  console.log(loading, error, data); // Stop at "true undefined undefined" 🥲
 
   // if (loading) return <p>Loading...</p>;
   // if (error) return <p>Error!</p>;
 
+  const getPokemons = async () => {
+    // pokemonCtx.addItems(data);
+    pokemonCtx.addItems(POKEMONS.data.pokemons);
+    // setPokemons(data);
+    setPokemons(POKEMONS.data.pokemons);
+  };
+
+  useEffect(() => {
+    getPokemons();
+  }, []);
+
   const i = Array.from(
-    Array(POKEMON.data.pokemons.length).keys(),
+    Array(POKEMONS.data.pokemons.length).keys(),
     (_, i) => i + 1
   );
 
   return (
     <Card className={styles["pokemon-list"]}>
-      <Pagination pages={i} items={POKEMON.data.pokemons} />
+      <Pagination pages={i} items={pokemons} />
     </Card>
   );
 };

@@ -3,10 +3,13 @@ import Card from "../UI/Card/Card";
 import styles from "./Dashboard.module.css";
 import { useContext } from "react";
 import PokemonContext from "../../store/pokemon-context";
+import PokemonChart from "./PokemonChart";
+
 const Dashboard = () => {
   const pokemonCtx = useContext(PokemonContext);
-  const pokemon = pokemonCtx.selectedItem;
+  const { selectedItem: pokemon, items: pokemons } = pokemonCtx;
 
+  console.log("pokemonCtx", pokemonCtx.items);
   return (
     <>
       <Pokemons />
@@ -21,9 +24,7 @@ const Dashboard = () => {
           <div id={styles["text"]}>
             <h4>{pokemon?.classification}</h4>
             <div className={styles["blackbox"]}>
-              1 tl çektin 1 aylık 25 tl. kredi 3 ay ertelem 3 ay vadeli 30 eylül
-              ilk taksit 5 bin ilk kasım da(2447.80) 1810 =6068 2192 5814 4 ay
-              vadeli aylık 1385 5538 6 ay vadeli 961tl ?5759
+              {/* <PokemonChart selectedPokemon={pokemon} allPokemons={pokemons} /> */}
             </div>
           </div>
           <img src={pokemon?.image} alt={pokemon?.name} />
