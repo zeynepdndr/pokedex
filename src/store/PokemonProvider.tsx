@@ -4,10 +4,13 @@ import PokemonContext from "./pokemon-context";
 const defaultPokemonState = {
   selectedItem: null,
   items: [],
+  isLoggedIn: false,
 };
 
 const pokemonReducer = (state, action) => {
   switch (action.type) {
+    case "LOGIN":
+      return { isLoggedIn: true };
     case "ADD_ITEMS":
       return { items: action.payload };
     case "SELECT_ITEM":
@@ -29,12 +32,17 @@ const PokemonProvider = (props) => {
   const addItemsHandler = (items) => {
     dispathPokemonAction({ type: "ADD_ITEMS", payload: items });
   };
+  const loginHandler = () => {
+    dispathPokemonAction({ type: "LOGIN" });
+  };
 
   const pokemonContext = {
     selectedItem: pokemonState.selectedItem,
     selectItem: selectItemHandler,
     items: pokemonState.items,
+    isLoggedIn: pokemonState.isLoggedIn,
     addItems: addItemsHandler,
+    loggedIn: loginHandler,
   };
 
   return (

@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 import PokemonContextProvider from "./store/PokemonProvider";
+import PokemonContext from "./store/pokemon-context";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Layout from "./components/Layout/Layout";
 import Login from "./components/Login/Login";
@@ -11,16 +12,13 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const pokemonCtx = useContext(PokemonContext);
   return (
     <ApolloProvider client={client}>
       <PokemonContextProvider>
         <Layout>
-          <>
-            {false && <Login />}
-            {true && <Dashboard />}
-          </>
+          {!pokemonCtx.isLoggedIn && <Login />}
+          {pokemonCtx.isLoggedIn && <Dashboard />}
         </Layout>
       </PokemonContextProvider>
     </ApolloProvider>

@@ -1,4 +1,5 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useState, useContext } from "react";
+import PokemonContext from "../../store/pokemon-context";
 import Input from "../UI/Input/Input";
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
@@ -36,6 +37,9 @@ const passwordReducer = (state, action) => {
 };
 
 const Login = () => {
+  const pokemonCtx = useContext(PokemonContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
     value: "",
     isValid: null,
@@ -47,10 +51,6 @@ const Login = () => {
   });
 
   const [formIsValid, setFormIsValid] = useState(false);
-
-  const signup = async () => {
-    console.log("Signed up successfully!");
-  };
 
   const emailChangeHandler = (event) => {
     dispatchEmail({ type: "USER_INPUT", payload: event.target.value });
@@ -70,6 +70,8 @@ const Login = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    pokemonCtx.loggedIn();
+    setIsLoggedIn(true);
     console.log("Logged in successfully!");
   };
 
@@ -88,6 +90,10 @@ const Login = () => {
     return () => clearTimeout(identifier);
   }, [isEmailValid, isPasswordValid]);
 
+  useEffect(() => {
+    console.log("poke", pokemonCtx);
+    setIsLoggedIn(pokemonCtx.isLoggedIn);
+  });
   return (
     <Card className={styles.login}>
       <form onSubmit={submitHandler}>
@@ -108,11 +114,7 @@ const Login = () => {
           onBlur={validatePasswordHandler}
         />
         <div className={styles.actions}>
-          <Button
-            onClick={signup}
-            className={styles.btn}
-            disabled={!formIsValid}
-          >
+          <Button type="submit" className={styles.btn} disabled={!formIsValid}>
             LOGIN
           </Button>
         </div>
