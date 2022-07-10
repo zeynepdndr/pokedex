@@ -4,6 +4,7 @@ import styles from "./Dashboard.module.css";
 import { useContext } from "react";
 import PokemonContext from "../../store/pokemon-context";
 import Chart from "../Chart/Chart";
+import pokeball from "../../img/pokeball.png";
 
 const Dashboard = () => {
   const pokemonCtx = useContext(PokemonContext);
@@ -44,9 +45,10 @@ const Dashboard = () => {
         )}
         {!pokemon && (
           <>
-            <div id={styles["text"]}>
-              Use the Advanced Search to explore Pokémon by type, weakness,
-              Ability, and more!
+            <div id={styles["explore"]}>
+              Use the items on the left to explore Pokémon by type, weight,
+              height, and more!
+              <img src={pokeball} alt="Pokeball" />
             </div>
           </>
         )}
