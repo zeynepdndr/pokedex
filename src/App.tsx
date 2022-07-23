@@ -17,8 +17,8 @@ function App() {
     <ApolloProvider client={client}>
       <PokemonContextProvider>
         <Layout>
-          {false && <Login />}
-          {true && <Dashboard />}
+          {true && <Login />}
+          {false && <Dashboard />}
         </Layout>
       </PokemonContextProvider>
     </ApolloProvider>

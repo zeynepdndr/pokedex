@@ -5,24 +5,15 @@
   flex-direction: column;
 }
 
-.control label,
 .control input {
   display: block;
 }
 
-.control label {
-  font-weight: bold;
-  flex: 1;
-  color: #464646;
-  margin-bottom: 0.5rem;
-}
-
 .control input {
-  flex: 3;
   font: inherit;
-  padding: 0.35rem 0.35rem;
+  padding-left: 22px;
   border-radius: 6px;
-
+  color: #ffffff;
   box-sizing: border-box;
 
   width: 380px;
@@ -39,9 +30,8 @@
   background: #4d4c4e;
 }
 
-.control.invalid input {
-  border-color: red;
-  background: #fbdada;
+.control.password input {
+  color: #8b8b8b;
 }
 
 @media (min-width: 768px) {

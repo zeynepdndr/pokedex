@@ -1,16 +1,22 @@
 .button {
-  font: inherit;
   cursor: pointer;
-  padding: 0.5rem 1rem;
   border: 6px solid #f2c94c;
   background-color: #f2c94c;
-  border-radius: 12px;
-  margin-right: 1rem;
+  border-radius: 6px;
 
   width: 380px;
   height: 60px;
-  left: 530px;
-  top: 521px;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
 }
 
 .button:hover,
