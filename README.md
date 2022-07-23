@@ -24,16 +24,6 @@ After the login page, you will be dropped into a "Pokedex", a simple dashboard t
 
 You will notice that in the selected section, only the header is designed for you. You have free autonomy over how to design the details section, and you are encouraged to implement the details page yourself.
 
-### 4. Gitlab
-
-To submit your code, commit your changes to a private **Gitlab** repository.
-
-In that repository, grant the following accounts **developer access** to be able to review the code and schedule a follow-up:
-
-- @eddiewang
-- @jacob.landowski
-- @ddanielcruzz
-- @mon.quindoza
 
 ## What we are looking for
 
