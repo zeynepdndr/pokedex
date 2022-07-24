@@ -38,7 +38,6 @@ const passwordReducer = (state, action) => {
 
 const Login = () => {
   const pokemonCtx = useContext(PokemonContext);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
     value: "",
@@ -70,8 +69,8 @@ const Login = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    pokemonCtx.loggedIn();
-    setIsLoggedIn(true);
+    pokemonCtx.isLoggedIn = true;
+
     console.log("Logged in successfully!");
   };
 
@@ -90,10 +89,6 @@ const Login = () => {
     return () => clearTimeout(identifier);
   }, [isEmailValid, isPasswordValid]);
 
-  useEffect(() => {
-    console.log("poke", pokemonCtx);
-    setIsLoggedIn(pokemonCtx.isLoggedIn);
-  });
   return (
     <Card className={styles.login}>
       <form onSubmit={submitHandler}>

@@ -1,16 +1,28 @@
 .login {
-  padding: 2rem;
-  position: absolute;
+  margin: 0 auto;
   height: 459px;
-  left: 466px;
-
-  /*should be changed */
-  top: 38px;
-
+  width: 508px;
   background: #2d2f36;
   border-radius: 8px;
+
+  /* Make it centered dynamically */
+  margin-top: 221px;
+}
+
+form {
+  margin: 0 auto;
+  width: 380px;
+  /* margin-top: 107px; */
+}
+
+form div:first-child {
+  padding-top: 107px;
 }
 
 .actions {
   text-align: center;
+}
+
+.btn {
+  margin-top: 27px;
 }

@@ -1,8 +1,4 @@
 .control {
-  margin: 1rem 0;
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
 }
 
 .control input {
@@ -11,18 +7,15 @@
 
 .control input {
   font: inherit;
-  padding-left: 22px;
   border-radius: 6px;
   color: #ffffff;
   box-sizing: border-box;
-
+  padding-left: 22px;
   width: 380px;
   height: 60px;
-  left: 530px;
-  top: 328px;
-
   background: #3f414b;
   border: 1px solid #f2c94c;
+  margin-bottom: 28px;
 }
 
 .control input:focus {

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Input.module.css";
 
 const Input: React.FC<any> = (props) => {
-  const { id, isValid, type, value, onChange, onBlur } = props;
+  const { id, type, value, onChange, onBlur } = props;
   return (
     <div
       className={`${styles.control}

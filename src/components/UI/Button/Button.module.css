@@ -3,19 +3,14 @@
   border: 6px solid #f2c94c;
   background-color: #f2c94c;
   border-radius: 6px;
-
   width: 380px;
   height: 60px;
-
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 25px;
   /* identical to box height */
-
-  text-align: center;
-
   color: #ffffff;
 }
 
