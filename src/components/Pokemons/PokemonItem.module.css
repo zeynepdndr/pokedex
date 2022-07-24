@@ -1,4 +1,5 @@
 .pokemon-item {
+  cursor: pointer;
   width: 380px;
   height: 75px;
   background: #3f414b;

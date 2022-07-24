@@ -9,7 +9,7 @@ const Pagination: React.FC<any> = (props) => {
   //   @TODO : Send PokemonItem component as a props to make this component reusable
 
   return (
-    <div>
+    <div className={styles.align}>
       {currentPageData.map((item) => (
         <PokemonItem key={item.id} pokemon={item} />
       ))}

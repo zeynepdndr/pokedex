@@ -1,10 +1,6 @@
 .pokemon-list {
-  position: absolute;
   width: 508px;
   height: 737px;
-  left: 126px;
-  top: 78px;
-
   background: #2d2f36;
   border-radius: 8px 0px 0px 8px;
 }
@@ -14,6 +10,7 @@
 }
 .pokemon-list div > nav {
   position: absolute;
-  bottom: 0;
-  align-self: flex-end;
+
+  /* Fix that style */
+  bottom: 48px;
 }

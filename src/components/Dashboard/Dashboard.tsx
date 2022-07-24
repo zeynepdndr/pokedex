@@ -19,9 +19,9 @@ const Dashboard = () => {
 
   return (
     <>
-      {!isLoggedIn && <Login />}
-      {isLoggedIn && (
-        <>
+      {true && <Login />}
+      {false && (
+        <div className={styles["dashboard"]}>
           <Pokemons />
           <Card className={styles["selected-pokemon"]}>
             <header>
@@ -66,7 +66,7 @@ const Dashboard = () => {
               </>
             )}
           </Card>
-        </>
+        </div>
       )}
     </>
   );

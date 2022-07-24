@@ -1,11 +1,13 @@
+.dashboard {
+  margin: 0 auto;
+  display: flex;
+  height: 737px;
+  width: 1198px;
+  margin-top: 78px;
+}
 .selected-pokemon {
-  position: absolute;
   width: 690px;
   height: 737px;
-  left: 634px;
-  top: 78px;
-
-  gap: 10px;
   font-family: "Open Sans";
   font-style: normal;
   font-size: 18px;
