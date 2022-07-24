@@ -27,7 +27,8 @@ const PokemonContext = React.createContext({
   items: [],
   selectItem: (id) => {},
   addItems: (items) => {},
-  isLoggedIn: true,
+  onLogin: () => {},
+  isLoggedIn: false,
 });
 
 export default PokemonContext;

@@ -67,10 +67,9 @@ const Login = () => {
     dispatchPassword({ type: "INPUT_BLUR" });
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-    pokemonCtx.isLoggedIn = true;
-
+    pokemonCtx.onLogin();
     console.log("Logged in successfully!");
   };
 

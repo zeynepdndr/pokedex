@@ -183,6 +183,7 @@ const Pokemons = () => {
     pokemonCtx.addItems(POKEMONS.data.pokemons);
     // setPokemons(data);
     setPokemons(POKEMONS.data.pokemons);
+    console.log("yuh");
   };
 
   useEffect(() => {

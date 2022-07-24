@@ -11,16 +11,10 @@ const Dashboard = () => {
   const pokemonCtx = useContext(PokemonContext);
   const { selectedItem: pokemon, isLoggedIn } = pokemonCtx;
 
-  console.log("is:", isLoggedIn);
-
-  useEffect(() => {
-    console.log("changed");
-  }, [isLoggedIn]);
-
   return (
     <>
-      {true && <Login />}
-      {false && (
+      {!isLoggedIn && <Login />}
+      {isLoggedIn && (
         <div className={styles["dashboard"]}>
           <Pokemons />
           <Card className={styles["selected-pokemon"]}>

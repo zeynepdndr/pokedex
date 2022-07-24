@@ -10,11 +10,12 @@ const defaultPokemonState = {
 const pokemonReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN":
-      return { isLoggedIn: true };
+      console.log("inReducer:", state);
+      return { ...state, isLoggedIn: true };
     case "ADD_ITEMS":
-      return { items: action.payload };
+      return { ...state, items: action.payload };
     case "SELECT_ITEM":
-      return { selectedItem: action.payload };
+      return { ...state, selectedItem: action.payload };
 
     default:
       return state;
@@ -22,18 +23,20 @@ const pokemonReducer = (state, action) => {
 };
 
 const PokemonProvider = (props) => {
-  const [pokemonState, dispathPokemonAction] = useReducer(
+  const [pokemonState, dispatchPokemonAction] = useReducer(
     pokemonReducer,
     defaultPokemonState
   );
   const selectItemHandler = (item) => {
-    dispathPokemonAction({ type: "SELECT_ITEM", payload: item });
+    dispatchPokemonAction({ type: "SELECT_ITEM", payload: item });
+    console.log("state:", pokemonState);
   };
   const addItemsHandler = (items) => {
-    dispathPokemonAction({ type: "ADD_ITEMS", payload: items });
+    dispatchPokemonAction({ type: "ADD_ITEMS", payload: items });
   };
   const loginHandler = () => {
-    dispathPokemonAction({ type: "LOGIN" });
+    dispatchPokemonAction({ type: "LOGIN" });
+    console.log("state:", pokemonState);
   };
 
   const pokemonContext = {
@@ -42,7 +45,7 @@ const PokemonProvider = (props) => {
     items: pokemonState.items,
     isLoggedIn: pokemonState.isLoggedIn,
     addItems: addItemsHandler,
-    loggedIn: loginHandler,
+    onLogin: loginHandler,
   };
 
   return (
