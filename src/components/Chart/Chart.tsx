@@ -8,8 +8,6 @@ const Chart = () => {
   // const maxValue = Math.max(...dataPointValues);
   const pokemonCtx = useContext(PokemonContext);
 
-  console.log("pokemonCtx:", pokemonCtx);
-
   const [dataPoints, setDataPoints] = useState<number[] | null>([]);
 
   const saveDataPointsHandler = () => {
@@ -23,13 +21,11 @@ const Chart = () => {
         parseInt(item["weight"]["minimum"])
       );
       setDataPoints(pokemonCtx.items);
-      console.log("did");
     }
   };
 
   useEffect(() => {
     saveDataPointsHandler();
-    console.log("dataPo:", dataPoints);
   }, [pokemonCtx.selectedItem]);
 
   return (

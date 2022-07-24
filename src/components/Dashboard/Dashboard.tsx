@@ -1,7 +1,7 @@
 import Pokemons from "../Pokemons/Pokemons";
 import Card from "../UI/Card/Card";
 import styles from "./Dashboard.module.css";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import PokemonContext from "../../store/pokemon-context";
 import Chart from "../Chart/Chart";
 import pokeball from "../../img/pokeball.png";

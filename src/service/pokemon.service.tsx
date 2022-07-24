@@ -1,4 +1,4 @@
-import { gql } from "apollo-boost";
+import { gql } from "@apollo/client";
 
 export const GET_POKEMONS = gql`
   {
@@ -16,17 +16,6 @@ export const GET_POKEMONS = gql`
         minimum
         maximum
       }
-    }
-  }
-`;
-
-export const VIEW_USERS = gql`
-  query ($id: Int) {
-    getUserInfo(id: $id) {
-      id
-      name
-      job_title
-      email
     }
   }
 `;
