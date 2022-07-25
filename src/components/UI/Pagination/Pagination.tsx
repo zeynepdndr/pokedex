@@ -8,6 +8,8 @@ const Pagination: React.FC<any> = (props) => {
 
   //   @TODO : Send PokemonItem component as a props to make this component reusable
 
+  console.log("hello:", props);
+
   return (
     <div className={styles.align}>
       {currentPageData.map((item) => (

@@ -4,7 +4,7 @@ import styles from "./Dashboard.module.css";
 import { useContext } from "react";
 import PokemonContext from "../../store/pokemon-context";
 import Chart from "../Chart/Chart";
-import pokeball from "../../img/pokeball.png";
+import pokeball from "../../assets/pokeball.png";
 import Login from "../Login/Login";
 
 const Dashboard = () => {

@@ -8,6 +8,7 @@ import Pagination from "../UI/Pagination/Pagination";
 import { useContext, useEffect, useState } from "react";
 import { GET_POKEMONS } from "../../service/pokemon.service";
 import PokemonContext from "../../store/pokemon-context";
+import loadGif from "../../assets/loading.gif";
 
 // const POKEMONS = {
 //   data: {
@@ -167,31 +168,47 @@ import PokemonContext from "../../store/pokemon-context";
 // };
 
 const Pokemons = () => {
-  const [pokemons, setPokemons] = useState<any>([]);
+  const [pokemons, setPokemons] = useState<any>(null);
+  const [loadingPokemons, setLoadingPokemons] = useState<boolean>(false);
   const { loading, error, data } = useQuery(GET_POKEMONS);
   const pokemonCtx = useContext(PokemonContext);
 
   console.log(loading, error, data); // Stop at "true undefined undefined" 🥲
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error!</p>;
-
   const getPokemons = async () => {
-    pokemonCtx.addItems(data);
+    if (loading) setLoadingPokemons(loading);
+    if (error) return <p>Error!</p>;
+
+    setLoadingPokemons(loading);
+    pokemonCtx.addItems(data.pokemons);
     // pokemonCtx.addItems(POKEMONS.data.pokemons);
-    setPokemons(data);
+    setPokemons(data.pokemons);
+
     // setPokemons(POKEMONS.data.pokemons);
   };
-
   useEffect(() => {
     getPokemons();
-  }, []);
+  }, [pokemons, loading]);
 
-  const i = Array.from(Array(pokemons.length).keys(), (_, i) => i + 1);
+  const i = Array.from(Array(pokemons?.length).keys(), (_, i) => i + 1);
+
+  console.log(
+    "!loading && !error && !!pokemons && pokemons.length > 0:kmkmkm loadingPokemons",
+    !loading,
+    !error,
+    pokemons,
+    pokemons?.length,
+    loadingPokemons
+  );
 
   return (
     <Card className={styles["pokemon-list"]}>
-      <Pagination pages={i} items={pokemons} />
+      {loadingPokemons && (
+        <img src={loadGif} className={styles.gif} alt="loading..." />
+      )}
+      {!loadingPokemons && !error && !!pokemons && pokemons?.length > 0 && (
+        <Pagination pages={i} items={pokemons} />
+      )}
     </Card>
   );
 };
