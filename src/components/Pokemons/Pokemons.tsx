@@ -173,8 +173,6 @@ const Pokemons = () => {
   const { loading, error, data } = useQuery(GET_POKEMONS);
   const pokemonCtx = useContext(PokemonContext);
 
-  console.log(loading, error, data); // Stop at "true undefined undefined" 🥲
-
   const getPokemons = async () => {
     if (loading) setLoadingPokemons(loading);
     if (error) return <p>Error!</p>;
@@ -191,15 +189,6 @@ const Pokemons = () => {
   }, [pokemons, loading]);
 
   const i = Array.from(Array(pokemons?.length).keys(), (_, i) => i + 1);
-
-  console.log(
-    "!loading && !error && !!pokemons && pokemons.length > 0:kmkmkm loadingPokemons",
-    !loading,
-    !error,
-    pokemons,
-    pokemons?.length,
-    loadingPokemons
-  );
 
   return (
     <Card className={styles["pokemon-list"]}>

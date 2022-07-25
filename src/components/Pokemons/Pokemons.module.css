@@ -10,9 +10,7 @@
 }
 .pokemon-list div > nav {
   position: absolute;
-
-  /* Fix that style */
-  bottom: 48px;
+  bottom: 0;
 }
 
 .gif {

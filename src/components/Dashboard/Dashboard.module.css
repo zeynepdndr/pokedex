@@ -1,9 +1,13 @@
 .dashboard {
-  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   display: flex;
   height: 737px;
   width: 1198px;
-  margin-top: 78px;
 }
 .selected-pokemon {
   width: 690px;
