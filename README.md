@@ -1,3 +1,7 @@
+# Pokedex
+
+This project was generated with React version 18.2.0.
+
 # Frontend Challenge
 
 This is a frontend project that simulates a potential real-life designer hand-off that is given to a software engineer to implement. You have 72 hours to complete this challenge.
